@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>React Samples</title>
+  </head>
+  <body>
+    <!-- Target container -->
+    <div id="root"></div>
+
+    <!-- React library & ReactDOM (Development Version) -->
+    <script src="https://unpkg.com/react@16.8.6/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      // Pure React and Javascript code
+      function Cat({ name }) {
+          return (
+              <React.Fragment>
+                <h1>The cat's name is {name}</h1>
+                <p>He's good.</p>
+              </React.Fragment>
+          );
+      }
+
+      function BlankCat({ name }) {
+          return (
+              <>
+                <h1>The cat's name is {name}</h1>
+                <p>He's good.</p>
+              </>
+          );
+      }
+
+      // A call to ReactDOM.render to render our Menu into the current DOM
+      ReactDOM.render(
+        <>
+            <Cat name="Fragment" />
+            <BlankCat name="Blank" />
+        </>,
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>
